@@ -1,7 +1,7 @@
 <?php 
 include ('db.php'); 
 
-if(isset($_POST['todoName'])){
+if(!empty($_POST['todoName'])){
 
     $todoName = $_POST['todoName'];
     $todoTime = $_POST['todoTime'];
@@ -43,12 +43,12 @@ if(isset($_POST['todoName'])){
                 <div class="card-body">
                     <form action="index.php" method="POST">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">To Do</label>
-                            <input type="text" class="form-control" name="todoName" placeholder="Enter Your to do">
+                            <label for="exampleTodo">To Do</label>
+                            <input type="text" class="form-control" name="todoName" placeholder="Enter Your to do" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">To do Time</label>
-                            <input type="date" class="form-control" name="todoTime">
+                            <label for="exampleTodoTime">To do Time</label>
+                            <input type="date" class="form-control" name="todoTime" required>
                         </div>
                         <button type="submit" name="todoSubmit" class="btn btn-primary">Submit</button>
                     </form> 
